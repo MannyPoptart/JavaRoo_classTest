@@ -8,11 +8,11 @@ public class Main {
         Methods methods = new Methods();
 
         while (true) {
-            System.out.println("Menu:");
+            System.out.println("Menu: ");
             System.out.println("1. Add");
             System.out.println("2. Rename");
             System.out.println("3. Delete");
-            System.out.println("4. View List");
+            System.out.println("4. View List of Names");
             System.out.println("5. Exit");
             System.out.print("Enter your choice: ");
             int choice = sc.nextInt();
@@ -41,7 +41,7 @@ public class Main {
                     methods.viewList();
                     break;
                 case 5:
-                    System.out.println("Exiting...");
+                System.out.println("Exiting... HAVE A NICE DAY!");
                     System.exit(0);
                 default:
                     System.out.println("Invalid choice. Please try again.");

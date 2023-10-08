@@ -1,45 +1,53 @@
 import java.util.ArrayList;
 
 public class Methods {
-    private ArrayList<String> items = new ArrayList<>();
+    private ArrayList<String> nameList = new ArrayList<>();
 
     public void add(String name) {
-        if (!isNameValid(name) || items.contains(name)) {
+        if (!isNameValid(name) || nameList.contains(name)) {
             System.out.println("Invalid or duplicated name.");
         } else {
-            items.add(name);
-            System.out.println("Item added: " + name);
+            nameList.add(name);
+            System.out.println("Name added: " + name);
         }
+        
     }
 
     public void rename(String oldName, String newName) {
-        if (!isNameValid(newName) || items.contains(newName)) {
+        if (!isNameValid(newName) || nameList.contains(newName)) {
             System.out.println("Invalid or duplicated name.");
-        } else if (!items.contains(oldName)) {
-            System.out.println("Item not found.");
-        } else {
-            items.set(items.indexOf(oldName), newName);
-            System.out.println("Item renamed from " + oldName + " to " + newName);
+        } 
+        else if (!nameList.contains(oldName)) {
+            System.out.println("Name not found.");
+        } 
+        else {
+            nameList.set(nameList.indexOf(oldName), newName);
+            System.out.println("Name renamed from " + oldName + " to " + newName);
         }
+
     }
 
     public void delete(String name) {
-        if (!items.contains(name)) {
-            System.out.println("Item not found.");
+        if (!nameList.contains(name)) {
+            System.out.println("Name not found.");
         } else {
-            items.remove(name);
-            System.out.println("Item deleted: " + name);
+            nameList.remove(name);
+            System.out.println("Name deleted: " + name);
         }
+
     }
 
     public void viewList() {
-        for (String item : items) {
-            System.out.println(item);
+        for (String i : nameList) {
+            System.out.println(i);
         }
+
     }
 
+    // helper method to check if name is valid
     private boolean isNameValid(String name) {
         return name != null && !name.isEmpty();
         
     }
+
 }
