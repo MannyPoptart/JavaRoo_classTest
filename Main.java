@@ -6,18 +6,21 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
         Methods methods = new Methods();
-
+        
+        // need to add a 6th option choice that allows us to view the contents of a specify class
         while (true) {
             System.out.println("Menu: ");
             System.out.println("1. Add a Class");
             System.out.println("2. Rename a Class");
             System.out.println("3. Delete a Class");
-            System.out.println("4. View List of Excisting Classes");
-            System.out.println("5. Exit");
+            System.out.println("4. View Excisting Classes and its Contents");
+            // Sytem.out.println("5. View the Contents of a Specific Class");
+            System.out.println("6. Exit");
             System.out.print("Enter your choice: ");
             int choice = sc.nextInt();
             sc.nextLine(); 
 
+            // add a new case for option 5
             switch (choice) {
                 case 1:
                     System.out.print("Enter a class name to add: ");
