@@ -7,7 +7,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         Methods methods = new Methods();
         
-        // need to add a 6th option choice that allows us to view the contents of a specify class
+        // need to add a 5th option choice that allows us to view the contents of a specify class
         while (true) {
             System.out.println("Menu: ");
             System.out.println("1. Add a Class");
@@ -15,12 +15,16 @@ public class Main {
             System.out.println("3. Delete a Class");
             System.out.println("4. View Existing Classes and its Contents");
             System.out.println("5. View the Contents of a Specific Class");
-            System.out.println("6. Exit");
+            System.out.println("6. Add a new relationship between two classes");
+            System.out.println("7. Delete a relationship between two classes");
+            System.out.println("8. View all relationships between classes");
+            System.out.println("9. View all relationships of a specific class");
+            System.out.println("10. Exit");
             System.out.print("Enter your choice: ");
             int choice = sc.nextInt();
             sc.nextLine(); 
 
-            // add a new case for option 5
+            
             switch (choice) {
                 case 1:
                     System.out.print("Enter a class name to add: ");
@@ -49,6 +53,29 @@ public class Main {
                     methods.viewContents(viewName);
                     break;
                 case 6:
+                    System.out.print("Enter the first class name: ");
+                    String firstClass = sc.nextLine();
+                    System.out.print("Enter the second class name: ");
+                    String secondClass = sc.nextLine();
+                    methods.addRelationship(firstClass, secondClass);
+                    break;
+                case 7:
+                    System.out.print("Enter the first class name: ");
+                    String firstClassDelete = sc.nextLine();
+                    System.out.print("Enter the second class name: ");
+                    String secondClassDelete = sc.nextLine();
+                    methods.deleteRelationship(firstClassDelete, secondClassDelete);
+                    break;
+                case 8:
+                    System.out.println("Here are all relationships: ");
+                    methods.viewRelationships();
+                    break;
+                case 9:
+                    System.out.print("Enter a class name to view its relationships: ");
+                    String viewRelationships = sc.nextLine();
+                    methods.viewAllRelationships(viewRelationships);
+                    break;
+                case 10:
                 System.out.println("Exiting... HAVE A NICE DAY!");
                     System.exit(0);
                 default:
