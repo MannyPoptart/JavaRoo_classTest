@@ -13,8 +13,8 @@ public class Main {
             System.out.println("1. Add a Class");
             System.out.println("2. Rename a Class");
             System.out.println("3. Delete a Class");
-            System.out.println("4. View Excisting Classes and its Contents");
-            // Sytem.out.println("5. View the Contents of a Specific Class");
+            System.out.println("4. View Existing Classes and its Contents");
+            System.out.println("5. View the Contents of a Specific Class");
             System.out.println("6. Exit");
             System.out.print("Enter your choice: ");
             int choice = sc.nextInt();
@@ -44,6 +44,11 @@ public class Main {
                     methods.viewList();
                     break;
                 case 5:
+                    System.out.print("Enter a class name to view its contents: ");
+                    String viewName = sc.nextLine();
+                    methods.viewContents(viewName);
+                    break;
+                case 6:
                 System.out.println("Exiting... HAVE A NICE DAY!");
                     System.exit(0);
                 default:

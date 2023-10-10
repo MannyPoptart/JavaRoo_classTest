@@ -44,6 +44,18 @@ public class Methods {
 
     }
 
+    // add a new method to view the contents of a specific class
+    public void viewContents(String name) {
+        if (!nameList.contains(name)) {
+            System.out.println("Name not found.");
+        } else {
+            System.out.println("Contents of " + name + ": ");
+            // add code to view the contents of a specific class
+        }
+    }
+
+    
+
     // helper method to check if name is valid
     private boolean isNameValid(String name) {
         return name != null && !name.isEmpty();
